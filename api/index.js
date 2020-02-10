@@ -8,9 +8,9 @@ const router = Router();
 router.use("/area", areaRoutes);
 
 router.get("/", (req, res) => {
-    console.log("App server hit");
+    console.log(`${req.url} was hit by ${req.ip} at ${(new Date()).toString()}`)
 
-    res.status(200).send("Oh hai");
+    return res.status(200).json({msg:"Oh hai"});
 });
 
 module.exports = router;
