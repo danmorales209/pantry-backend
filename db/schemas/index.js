@@ -1,4 +1,5 @@
 module.exports = {
-    Area: require('./area')
+    Area: require('./area'),
+    User: require('./user')
 
 };
