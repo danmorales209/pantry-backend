@@ -1,4 +1,4 @@
-const AreaStore = require('./../store/area');
+const AreaStore = require('./../store').area;
 
 class AreaModel {
     constructor(logger = console) {
