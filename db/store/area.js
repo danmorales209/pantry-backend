@@ -1,8 +1,8 @@
 const db = require('./../schemas');
 
 class AreaStore {
-    constructor(logger) {
-        this.logger = logger || console;
+    constructor(logger = console) {
+        this.logger = logger;
         this.db = db.Area;
     };
     async getAll(owner) {
