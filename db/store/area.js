@@ -13,18 +13,20 @@ class AreaStore {
             return results;
         }).catch(error => {
             this.logger.error(error)
+            throw error;
         })
 
     };
     async createOne(name, temperature, capacity = null) {
+                
         return await this.db.create({
             areaName: name,
             temperature: temperature,
             capacity: capacity
         }).then(() => {
-            this.logger.info('Document successfully created.', {context: arguments})
+            this.logger.info('Document successfully created.', {name, temperature, capacity})
         }).catch( error => {
-            this.logger.error(error.message, {context: arguments, err: error})
+            this.logger.error(error.message, {context: {name, temperature, capacity}, err: error})
             throw error;
         });
     }
