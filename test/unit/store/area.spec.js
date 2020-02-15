@@ -1,6 +1,6 @@
 const chai = require('chai');
 const sinon = require('sinon');
-const areaStore = require('./../../db/store').area;
+const areaStore = require('../../../db/store').area;
 
 describe('Store Unit Tests -- Area', function () {
     const testStore = new areaStore();
