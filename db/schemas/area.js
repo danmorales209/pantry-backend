@@ -11,7 +11,7 @@ const areaSchema = new Schema({
         default: "Ambient"
     },
     capacity: {
-        type: Number,
+        type: String,
         required: false
     }
 
