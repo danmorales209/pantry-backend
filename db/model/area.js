@@ -10,7 +10,7 @@ class AreaModel {
     // _checkPermissions() {}
 
     async createArea(name, temperature, capacity = null) {
-        return await this.store.createOne(name, temperature, capacity = null)
+        return await this.store.createOne(name, temperature, capacity)
             .catch(error => {
                 this.logger.error(error);
                 throw error;
