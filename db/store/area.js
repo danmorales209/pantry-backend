@@ -17,7 +17,7 @@ class AreaStore {
         })
 
     };
-    async createOne(name, temperature, capacity = null) {
+    async createOne({name, temperature, capacity = null}) {
                 
         return await this.db.create({
             areaName: name,
