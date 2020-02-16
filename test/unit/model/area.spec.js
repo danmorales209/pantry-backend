@@ -1,7 +1,7 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const AreaModel = require('./../../../db/model').area;
-const help = require('./../_helper')
+const help = require('./../../_helper');
 
 describe('Model Unit Tests -- Area', function() {
     
