@@ -1,9 +1,10 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const areaStore = require('../../../db/store').area;
+const help = require('./../_helper');
 
 describe('Store Unit Tests -- Area', function () {
-    const testStore = new areaStore();
+    const testStore = new areaStore(help.logger());
     let mocks = [];
 
    /*  before('Some pre work', function(done) {
@@ -30,11 +31,11 @@ describe('Store Unit Tests -- Area', function () {
             mocks.push(findMock);
     
             return testStore.getAll({owner: 'bob'}).then( results => {
-                console.log(results)
+
                 chai.expect(results).to.exist;
-                chai.expect(results).to.equal("Woot")
+                chai.expect(results).to.equal("Woot");
             }).catch(error => {
-                console.log("Shouldn't see this")
+                
                 console.error(error);
                 chai.expect(error).to.not.exist;
             })
