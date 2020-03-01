@@ -1,16 +1,22 @@
-const {
-    Router
-} = require('express')
-const areaRoutes = require("./area");
+const router = require('express').Router();
 
-const router = Router();
+module.exports = {
+    baseRoutes: function () {
+        const routesMap = {
+            auth: {
+                path: "/",
+                source: require('./auth')
+            },
+            area: {
+                path: "/area",
+                source: require('./area')
+            }
+        };
+        Object.keys(routesMap).forEach(route => {
+            router.use(routesMap[route].path, routesMap[route].source)
+        });
 
-router.use("/area", areaRoutes);
+        return router
+    }
 
-router.get("/", (req, res) => {
-    console.log(`${req.url} was hit by ${req.ip} at ${(new Date()).toString()}`)
-
-    return res.status(200).json({msg:"Oh hai"});
-});
-
-module.exports = router;
+}

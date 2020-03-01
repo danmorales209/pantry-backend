@@ -3,7 +3,7 @@ const express = require('express');
 const http = require("http")
 const port = process.env.PORT || 3001;
 const path = require('path');
-const routes = require("./api");
+const api = require("./api");
 const mongoose = require('mongoose');
 const logger = require('./utilities/logger');
 const cors = require('cors');
@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors())
-app.use(routes);
+app.use(api.baseRoutes());
 
 
 
