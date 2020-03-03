@@ -5,7 +5,7 @@ const port = process.env.PORT || 3001;
 const path = require('path');
 const api = require("./api");
 const mongoose = require('mongoose');
-const logger = require('./utilities/logger');
+const logger = require('./utilities').logger;
 const cors = require('cors');
 
 const app = express();

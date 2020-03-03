@@ -4,7 +4,7 @@ module.exports = {
     baseRoutes: function () {
         const routesMap = {
             auth: {
-                path: "/",
+                path: "/auth",
                 source: require('./auth')
             },
             area: {

@@ -1,6 +1,6 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-const logger = require('./../utilities/logger');
+const logger = require('./../utilities').logger;
 
 const SUPPESS_TEST_LOG = process.env.SUPPESS_TEST_LOG || true;
 

@@ -3,7 +3,7 @@ const {
 } = require('express');
 const router = Router();
 const AreaModel = require('./../db/model/area');
-const logger = require('./../utilities/logger').child({
+const logger = require('./../utilities').logger.child({
     service: 'Area'
 })
 
